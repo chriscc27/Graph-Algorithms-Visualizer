@@ -1,0 +1,220 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: #282c34;
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1000;
+  width: 100%;
+}
+
+.header-buttons {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* LOGO */
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, #349ebb, #6dd5ed);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: logoShine 3s ease infinite;
+}
+
+@keyframes logoShine {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.separator {
+  border-left: 2px solid white;
+  height: 40px;
+  margin-right: 20px;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-grow: 1;
+}
+
+/* === MENÚ PRINCIPAL === */
+.menu {
+  display: flex;
+  gap: 10px;
+}
+
+.menu-item {
+  position: relative;
+}
+
+.menu-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 5px 10px;
+  transition: background-color 0.3s ease;
+}
+
+.menu-button:hover {
+  background-color: #349ebb;
+  border-radius: 4px;
+}
+
+/* === DROPDOWN (MENÚ PRINCIPAL) === */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: rgb(243, 243, 243);
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  white-space: nowrap;
+  padding: 5px 0;
+}
+
+/* Contenedor de cada opción para alinear el submenú */
+.dropdown-item-container {
+  position: relative;
+}
+
+/* === ELEMENTOS DE MENÚ Y SUBMENÚ === */
+.dropdown-item, .submenu-item {
+  display: block;
+  width: 100%;
+  padding: 8px 20px;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-item:hover, .submenu-item:hover {
+  background-color: #9c9393;
+}
+
+/* === SUBMENÚ (A LA DERECHA) === */
+.submenu {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background-color: rgb(243, 243, 243);
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  white-space: nowrap;
+  padding: 5px 0;
+}
+
+/* === ICONOS DE AYUDA, EDITAR Y ELIMINAR === */
+.ayuda-container {
+  margin-left: auto;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 5px;
+}
+
+.icon-button:hover {
+  opacity: 0.8;
+}
+
+/* BOTONES MEJORADOS */
+.btn-algoritmo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.8rem 1.5rem;
+  background: #349ebb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.btn-algoritmo::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.5s ease;
+}
+
+.btn-algoritmo:hover {
+  background: #2a7d8f;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-algoritmo:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn-algoritmo:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.btn-algoritmo .btn-icon {
+  transition: transform 0.3s ease;
+}
+
+.btn-algoritmo:hover .btn-icon {
+  transform: rotate(15deg) scale(1.1);
+}
+
+/* Animación al hacer hover */
+@keyframes buttonShine {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+.btn-algoritmo::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.btn-algoritmo:hover::after {
+  left: 100%;
+}

@@ -1,0 +1,62 @@
+.opciones-container {
+    position: absolute;
+    left: 20px; /* Ajusta según tu necesidad */
+    top: 215px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column; /* Para apilar los botones verticalmente */
+    gap: 12px;
+    width: 325px;
+    padding: 14px;
+    background: linear-gradient(135deg, #dff6ff, #a3e2ff);
+    border-radius: 15px;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);
+    justify-content: center;
+    align-items: center;
+}
+
+.opcion-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: inset 2px 2px 6px rgba(255, 255, 255, 0.6),
+                inset -2px -2px 6px rgba(0, 0, 0, 0.2),
+                4px 4px 8px rgba(0, 0, 0, 0.3);
+    width: 180px; /* Ajusta el ancho para que los botones sean uniformes */
+    text-align: center;
+    justify-content: center;
+}
+
+.opcion-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.opcion-editar {
+    background: linear-gradient(145deg, #56ccf2, #2f80ed);
+}
+
+.opcion-borrar {
+    background: linear-gradient(145deg, #ff4b2b, #ff416c);
+}
+
+.opcion-cambiar {
+    background: linear-gradient(145deg, #48c9b0, #16a085);
+}
+
+.opcion-guardar {
+    background: linear-gradient(145deg, #ffcc33, #ff8800);
+}
+
+.opcion-btn:active {
+    transform: scale(0.95);
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3);
+}

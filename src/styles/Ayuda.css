@@ -1,0 +1,90 @@
+/* Ayuda.css */
+.ayuda-container {
+  position: relative;
+  display: inline-block;
+  margin-left: 1.5rem; /* Espaciado consistente con otros botones */
+}
+
+/* Hereda todos los estilos de .btn-algoritmo del Header.css */
+.ventana-ayuda {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background: white;
+  border: 1px solid #349ebb;
+  border-radius: 8px;
+  box-shadow: 0 8px 25px rgba(52, 158, 187, 0.2);
+  padding: 1.5rem;
+  width: 420px;
+  z-index: 1000;
+  animation: ventanaSlide 0.3s ease-out;
+}
+
+@keyframes ventanaSlide {
+  0% { opacity: 0; transform: translateY(-10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.ventana-ayuda h2 {
+  margin: 0 0 1.5rem 0;
+  color: #282c34;
+  font-size: 1.4rem;
+  text-align: center;
+  border-bottom: 2px solid #349ebb;
+  padding-bottom: 0.8rem;
+}
+
+.ventana-ayuda ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.instruccion {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.2rem;
+  padding: 0.8rem;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.instruccion:hover {
+  background-color: #f5f5f5;
+}
+
+.imagen-instruccion {
+  width: 60px;
+  height: 60px;
+  margin-right: 1.2rem;
+  border-radius: 6px;
+  border: 1px solid #349ebb33;
+  object-fit: cover;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.instruccion div {
+  flex: 1;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #444;
+}
+
+.instruccion strong {
+  color: #2a7d8f;
+  font-weight: 600;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+  .ventana-ayuda {
+    width: 320px;
+    right: -50%;
+    transform: translateX(50%);
+  }
+  
+  .imagen-instruccion {
+    width: 50px;
+    height: 50px;
+  }
+}

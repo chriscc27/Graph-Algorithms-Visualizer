@@ -1,0 +1,1388 @@
+.contenedor {
+  display: flex;
+  height: 100vh;
+}
+
+.panel-izquierdo {
+  background-color: #f4f4f4;
+  padding: 15px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  width: 250px; /* Ancho inicial del panel */
+}
+
+.panel-derecho {
+  background-color: #f4f4f4;
+  padding: 50px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  width: 250px; /* Ancho inicial del panel */
+}
+
+
+.pizarra {
+  flex-grow: 1;
+  background-color: #fff;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+
+.contenido-panel {
+  margin-top: 10px;
+}
+
+.custom-color-container {
+  margin-bottom: 10px;
+}
+
+.colores-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.color-option {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #ddd;
+}
+
+.color-option:hover {
+  border-color: #000;
+}
+
+.custom-color-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.custom-color-container input[type="color"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 35px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+
+.custom-color-container input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.custom-color-container input[type="color"]::-webkit-color-swatch {
+  border: none;
+}
+
+.resize-handle {
+  width: 5px;
+  height: 100%;
+  background-color: #ccc;
+  cursor: ew-resize;
+  position: absolute;
+  top: 0;
+}
+
+.panel-izquierdo .resize-handle {
+  right: 0;
+}
+
+.panel-derecho .resize-handle {
+  left: 0;
+}
+
+.panel-izquierdo, .panel-derecho {
+  position: relative;
+}
+
+.button {
+  background-color: #4c4eaf; /* Verde */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: rgb(180, 24, 172); /* Verde oscuro */
+}
+
+.button:disabled {
+  background-color: #cccccc; /* Gris */
+  cursor: not-allowed;
+}
+
+.hidden {
+  display: none;
+}
+
+.dropdown-menu {
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-item-container {
+  padding: 8px 16px;
+}
+
+.dropdown-item {
+  background-color: white;
+  border: none;
+  color: black;
+  padding: 8px 16px;
+  text-align: left;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+}
+.button.frutiger-button {
+  background: linear-gradient(145deg, #6fc3df, #4c8faf); /* Gradiente azul */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Borde sutil */
+  color: white;
+  padding: 12px 24px;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 8px 4px;
+  cursor: pointer;
+  border-radius: 12px; /* Bordes más redondeados */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  transition: all 0.3s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente moderna */
+}
+
+.button.frutiger-button:hover {
+  background: linear-gradient(145deg, #4c8faf, #6fc3df); /* Invertir gradiente al pasar el mouse */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+  transform: translateY(-2px); /* Efecto de elevación */
+}
+
+.button.frutiger-button:active {
+  background: linear-gradient(145deg, #3a6d85, #5aa5c7); /* Gradiente más oscuro al hacer clic */
+  transform: translateY(0); /* Restablecer elevación */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra original */
+}
+
+.button.frutiger-button:disabled {
+  background: linear-gradient(145deg, #cccccc, #999999); /* Gradiente gris */
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+/* Estilo para el botón de limpiar */
+.button.frutiger-button.clean-button {
+  background: linear-gradient(145deg, #ff6f61, #ff9f4d); /* Gradiente rojo/naranja */
+}
+
+.button.frutiger-button.clean-button:hover {
+  background: linear-gradient(145deg, #ff9f4d, #ff6f61); /* Invertir gradiente */
+}
+
+/* Estilo para el botón de importar */
+.button.frutiger-button.import-button {
+  background: linear-gradient(145deg, #6fdf6f, #4caf4c); /* Gradiente verde */
+}
+
+.button.frutiger-button.import-button:hover {
+  background: linear-gradient(145deg, #4caf4c, #6fdf6f); /* Invertir gradiente */
+}
+
+/* Estilo para el botón de exportar */
+.button.frutiger-button.export-button {
+  background: linear-gradient(145deg, #6fc3df, #4c8faf); /* Gradiente azul */
+}
+
+.button.frutiger-button.export-button:hover {
+  background: linear-gradient(145deg, #4c8faf, #6fc3df); /* Invertir gradiente */
+}
+
+/* Estilo para el botón de eliminar */
+.button.frutiger-button.delete-button {
+  background: linear-gradient(145deg, #ff4d4d, #cc0000); /* Gradiente rojo oscuro */
+}
+
+.button.frutiger-button.delete-button:hover {
+  background: linear-gradient(145deg, #cc0000, #ff4d4d); /* Invertir gradiente */
+}
+
+/* Estilo para el botón de editar */
+.button.frutiger-button.edit-button {
+  background: linear-gradient(145deg, #ffcc00, #ff9900); /* Gradiente amarillo/naranja */
+}
+
+.button.frutiger-button.edit-button:hover {
+  background: linear-gradient(145deg, #ff9900, #ffcc00); /* Invertir gradiente */
+}
+
+/* Estilos para los iconos */
+.button.frutiger-button i {
+  margin-right: 8px;
+}
+/* Estilo adicional para el botón de editar */
+.button.frutiger-button.edit-button {
+  background: linear-gradient(145deg, #ff9f4d, #ff6f61); /* Gradiente naranja */
+}
+
+.button.frutiger-button.edit-button:hover {
+  background: linear-gradient(145deg, #ff6f61, #ff9f4d); /* Invertir gradiente */
+}
+
+.dropdown-item:hover {
+  background-color: #f1f1f1;
+}
+
+.submenu {
+  position: absolute;
+  left: 100%;
+  top: 0;
+  background-color: white;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.submenu-item {
+  background-color: white;
+  border: none;
+  color: black;
+  padding: 8px 16px;
+  text-align: left;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+}
+
+.submenu-item:hover {
+  background-color: #f1f1f1;
+}
+
+/* Estilo para los botones de Northwest */
+.button.frutiger-button.northwest-button {
+    background: linear-gradient(145deg, #9C27B0, #673AB7); /* Gradiente morado */
+}
+
+.button.frutiger-button.northwest-button:hover {
+    background: linear-gradient(145deg, #673AB7, #9C27B0); /* Invertir gradiente */
+}
+
+/* Estilos para los pasos de la solución */
+.paso-solucion {
+    margin: 20px 0;
+    padding: 15px;
+    background: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.paso-solucion h4 {
+    color: #673AB7;
+    margin-bottom: 10px;
+}
+
+.paso-solucion p {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.paso-solucion table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.paso-solucion th,
+.paso-solucion td {
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.paso-solucion th {
+    background-color: #673AB7;
+    color: white;
+}
+
+.paso-solucion tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Estilos para el nuevo componente PizarraNorthwest */
+.contenedor-northwest {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: #f5f5f5;
+  overflow: auto;
+  padding: 20px;
+}
+
+.panel-controles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  align-items: center;
+}
+
+.panel-controles h2 {
+  margin: 0 20px 0 0;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.panel-resultado {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.matriz-container {
+  margin-bottom: 20px;
+}
+
+.matriz-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  border: 1px solid #ddd;
+}
+
+.matriz-tabla th,
+.matriz-tabla td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.matriz-tabla th {
+  background-color: #673AB7;
+  color: white;
+  font-weight: bold;
+}
+
+.matriz-tabla tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.celda-editable {
+  cursor: pointer;
+  transition: background-color 0.2s;
+  position: relative;
+}
+
+.celda-editable:hover {
+  background-color: #e3f2fd;
+}
+
+.celda-editable:hover::after {
+  content: "✏️";
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 10px;
+  color: #666;
+}
+
+.hint {
+  font-style: italic;
+  color: #666;
+  margin-top: 5px;
+  font-size: 0.9rem;
+}
+
+.pasos-container {
+  margin-top: 30px;
+}
+
+.paso-solucion {
+  margin-bottom: 30px;
+  padding: 15px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.paso-solucion h4 {
+  color: #673AB7;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.paso-solucion p {
+  margin-bottom: 15px;
+  color: #555;
+}
+
+/* Estilos para botones de agregar/eliminar en la matriz */
+.matriz-control {
+  position: relative;
+  overflow: visible;
+}
+
+.matriz-editable {
+  border-collapse: collapse;
+  margin: 15px 0;
+}
+
+.btn-matriz {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0 3px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-add {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.btn-remove {
+  background-color: #F44336;
+  color: white;
+}
+
+.btn-matriz:hover {
+  transform: scale(1.1);
+}
+
+.btn-add:hover {
+  background-color: #388E3C;
+}
+
+.btn-remove:hover {
+  background-color: #D32F2F;
+}
+
+.input-matriz {
+  width: 50px;
+  height: 30px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 16px;
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.input-matriz:focus {
+  outline: none;
+  border-color: #673AB7;
+  box-shadow: 0 0 3px rgba(103, 58, 183, 0.5);
+}
+
+.matriz-tabla.matriz-editable td {
+  padding: 5px;
+  position: relative;
+}
+
+/* Regla para asegurar que inputs solo acepten números */
+.input-matriz:invalid {
+  border-color: #F44336;
+  background-color: rgba(255, 0, 0, 0.05);
+}
+
+/* Estilos adicionales para la matriz editable */
+.matriz-editable th, 
+.matriz-editable td {
+  min-width: 60px;
+  height: 40px;
+}
+
+/* Resaltar celdas de oferta y demanda */
+tr:last-child .input-matriz,
+td:last-of-type .input-matriz {
+  background-color: #E8F5E9; /* Verde muy claro */
+  border-color: #81C784; /* Verde más oscuro */
+}
+
+/* Estilos para la visualización mejorada de la matriz de resultados Northwest */
+.matriz-resultados {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.matriz-resultado td {
+  position: relative;
+  height: 60px;
+}
+
+/* Estilos para celdas con asignación */
+.celda-asignada {
+  background-color: #E8F5E9;
+  border: 2px solid #4CAF50;
+}
+
+.celda-contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.valor-asignado {
+  font-size: 18px;
+  font-weight: bold;
+  color: #2E7D32;
+}
+
+.costo-unitario {
+  font-size: 12px;
+  color: #757575;
+  margin-top: 2px;
+}
+
+/* Leyenda de resultados */
+.resultado-leyenda {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.leyenda-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.leyenda-color {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+}
+
+.costo-total {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.costo-total h4 {
+  margin: 0;
+  color: #673AB7;
+}
+
+/* Estilos para los pasos de la solución con colores */
+.paso-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.paso-costo {
+  background-color: #f5f5f5;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.matriz-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.matriz-paso {
+  position: relative;
+}
+
+.tabla-paso td {
+  position: relative;
+  height: 60px;
+  transition: all 0.3s ease;
+}
+
+/* Colores para diferentes estados de celda */
+.celda-asignacion-actual {
+  background-color: #FFF9C4;
+  border: 2px solid #FFC107;
+  animation: destacar 2s infinite alternate;
+}
+
+.celda-asignacion-previa {
+  background-color: #E8F5E9;
+  border: 2px solid #4CAF50;
+}
+
+.celda-fila-agotada {
+  background-color: #FFEBEE;
+  color: #D32F2F;
+}
+
+.celda-columna-agotada {
+  background-color: #E8EAF6;
+  color: #3F51B5;
+}
+
+.oferta-agotada, .demanda-agotada {
+  background-color: #FFEBEE;
+  color: #D32F2F;
+  font-weight: bold;
+}
+
+/* Animación para destacar la celda actual */
+@keyframes destacar {
+  from { box-shadow: 0 0 0 rgba(255, 193, 7, 0.5); }
+  to { box-shadow: 0 0 10px rgba(255, 193, 7, 0.8); }
+}
+
+.celda-paso-contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.valor-paso {
+  font-size: 16px;
+  font-weight: bold;
+  color: #2E7D32;
+}
+
+.costo-paso {
+  font-size: 12px;
+  color: #757575;
+}
+
+.indicador-actual {
+  position: absolute;
+  right: -120px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #FFC107;
+  color: #333;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 10;
+}
+
+.explicacion-paso {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 15px;
+  margin-top: 10px;
+}
+
+.explicacion-texto {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.explicacion-flecha {
+  font-style: normal;
+  font-size: 18px;
+  color: #FFC107;
+  margin-right: 5px;
+}
+
+/* Resultados finales */
+.resultado-northwest {
+  text-align: center;
+  padding: 10px;
+}
+
+.resultado-northwest p {
+  margin: 10px 0;
+}
+
+.resultado-northwest strong {
+  color: #673AB7;
+  font-size: 18px;
+}
+
+/* Mejorar especificidad en inputs y etiquetas */
+.matriz-editable input.input-matriz {
+  font-weight: bold;
+}
+
+/* Estilos para las flechas */
+.celda-asignacion-actual::before {
+  content: '↙';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  color: #FF9800;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Sombreado para el recorrido Northwest */
+.paso-solucion .tabla-paso tr:first-child td:first-child {
+  background-color: #673AB7;
+  color: white;
+}
+
+.paso-solucion .tabla-paso tr:first-child td:first-child::after {
+  content: 'Inicio';
+  position: absolute;
+  top: -20px;
+  left: 0;
+  font-size: 10px;
+  color: #673AB7;
+  font-weight: bold;
+}
+
+/* Estilos para inputs de nombres */
+.input-nombre {
+  width: 100%;
+  min-width: 80px;
+  height: 30px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 14px;
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 0.8);
+  transition: all 0.2s;
+}
+
+.input-nombre:focus {
+  outline: none;
+  border-color: #673AB7;
+  box-shadow: 0 0 5px rgba(103, 58, 183, 0.5);
+  background-color: white;
+}
+
+/* Estilos para la leyenda de colores */
+.leyenda-colores {
+  margin-top: 15px;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+}
+
+.leyenda-colores h5 {
+  margin: 10px 0 5px 0;
+  color: #555;
+  font-size: 14px;
+}
+
+.leyenda-colores-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.leyenda-color-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.leyenda-color-item .leyenda-color {
+  width: 15px;
+  height: 15px;
+  border-radius: 3px;
+}
+
+/* Mejorar visualización en matrices de resultados */
+.matriz-resultado th, 
+.matriz-resultado td,
+.tabla-paso th,
+.tabla-paso td {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Indicadores de flujo en las celdas */
+.celda-asignada::after {
+  content: '';
+}
+
+.celda-asignacion-actual::after {
+  content: '';
+}
+
+.celda-asignacion-actual::before {
+  content: '';
+}
+
+.paso-solucion .tabla-paso tr:first-child td:first-child::after {
+  content: '';
+}
+
+.celda-oferta:before, .celda-demanda:before {
+  content: '';
+}
+
+.flecha-oferta, .flecha-demanda, 
+.linea-flecha, .punta-flecha,
+.indicador-flujo, .flecha-origen, .flecha-destino,
+.explicacion-flecha {
+  display: none;
+}
+
+/* Animaciones eliminadas */
+@keyframes flujo {
+  0% { transform: none; }
+  100% { transform: none; }
+}
+
+@keyframes pulsar {
+  0% { opacity: 1; }
+  100% { opacity: 1; }
+}
+
+/* Estilos mejorados para botones de matriz y controles */
+.btn-matriz {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn-matriz:active {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  transform: translateY(1px);
+}
+
+/* Contenedor de la matriz con scroll horizontal si es necesario */
+.matriz-control {
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+/* Mejor contraste para la leyenda */
+.resultado-leyenda {
+  background-color: #f1f1f1;
+  border-radius: 8px;
+}
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+  .leyenda-colores-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .matriz-control {
+    max-width: 100%;
+  }
+}
+
+/* Estilos para los botones Northwest, Máximo y Mínimo */
+.botones-northwest {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+}
+
+.button.frutiger-button.northwest-button {
+  background: linear-gradient(145deg, #9C27B0, #673AB7); /* Gradiente morado */
+  flex: 1;
+}
+
+.button.frutiger-button.northwest-button:hover {
+  background: linear-gradient(145deg, #673AB7, #9C27B0); /* Invertir gradiente */
+}
+
+.button.frutiger-button.maximo-button {
+  background: linear-gradient(145deg, #FF5722, #FF9800); /* Gradiente naranja/rojo */
+  flex: 1;
+}
+
+.button.frutiger-button.maximo-button:hover {
+  background: linear-gradient(145deg, #FF9800, #FF5722); /* Invertir gradiente */
+}
+
+.button.frutiger-button.minimo-button {
+  background: linear-gradient(145deg, #4CAF50, #8BC34A); /* Gradiente verde */
+  flex: 1;
+}
+
+.button.frutiger-button.minimo-button:hover {
+  background: linear-gradient(145deg, #8BC34A, #4CAF50); /* Invertir gradiente */
+}
+
+/* Flechas desde origen/destino hacia celda */
+.flecha-oferta {
+  position: absolute;
+  left: -50px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 10px;
+  z-index: 10;
+}
+
+.flecha-demanda {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 50px;
+  z-index: 10;
+}
+
+.linea-flecha {
+  position: absolute;
+  transition: all 0.3s ease;
+}
+
+.flecha-oferta .linea-flecha {
+  width: 40px;
+  height: 4px;
+  right: 0;
+  top: 3px;
+}
+
+.flecha-demanda .linea-flecha {
+  width: 4px;
+  height: 40px;
+  bottom: 0;
+  left: 3px;
+}
+
+.punta-flecha {
+  position: absolute;
+  width: 0;
+  height: 0;
+  transition: all 0.3s ease;
+}
+
+.flecha-oferta .punta-flecha {
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 12px solid;
+  right: 0;
+  top: -6px;
+}
+
+.flecha-demanda .punta-flecha {
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 12px solid;
+  bottom: 0;
+  left: -6px;
+}
+
+/* Indicador de flujo en la explicación */
+.indicador-flujo {
+  display: inline-flex;
+  margin-right: 10px;
+  font-size: 18px;
+  animation: pulsar 1.5s infinite alternate;
+}
+
+.flecha-origen, .flecha-destino {
+  font-size: 22px;
+  margin: 0 -3px;
+}
+
+@keyframes pulsar {
+  0% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+/* Mejorar visualización de ceros en oferta/demanda */
+.oferta-agotada-resultado, .demanda-agotada-resultado {
+  position: relative;
+  background-color: #FFEBEE !important;
+  font-weight: bold;
+  color: #D32F2F;
+  border: 2px solid #F44336;
+}
+
+.oferta-agotada-resultado:after, .demanda-agotada-resultado:after {
+  content: "0";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 22px;
+  font-weight: bold;
+  color: #D32F2F;
+}
+
+/* Estilos para celdas de oferta y demanda en la matriz de edición */
+.celda-oferta, .celda-demanda {
+  position: relative;
+}
+
+.celda-oferta:before {
+  content: "⟹";
+  position: absolute;
+  right: -25px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #4CAF50;
+  z-index: 5;
+}
+
+.celda-demanda:before {
+  content: "⟱";
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 16px;
+  color: #2196F3;
+  z-index: 5;
+}
+
+/* Explicación del método */
+.explicacion-metodo {
+  margin-top: 15px;
+  padding: 8px 12px;
+  background-color: #E8F5E9;
+  border-left: 4px solid #4CAF50;
+  border-radius: 4px;
+  font-size: 13px;
+  color: #333;
+}
+
+/* Media queries para responsividad de botones */
+@media (max-width: 768px) {
+  .botones-northwest {
+    flex-direction: column;
+  }
+  
+  .button.frutiger-button.northwest-button,
+  .button.frutiger-button.maximo-button,
+  .button.frutiger-button.minimo-button {
+    width: 100%;
+  }
+}
+
+/* Estilos simplificados para filas y columnas */
+.fila-header {
+  background-color: rgba(76, 175, 80, 0.2) !important; /* Verde claro para filas/orígenes */
+  font-weight: bold;
+  color: #333;
+  border-left: 3px solid #4CAF50 !important;
+}
+
+.columna-header {
+  background-color: rgba(33, 150, 243, 0.2) !important; /* Azul claro para columnas/destinos */
+  font-weight: bold;
+  color: #333;
+  border-top: 3px solid #2196F3 !important;
+}
+
+.input-fila {
+  border-color: #4CAF50;
+}
+
+.input-fila:focus {
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+.input-columna {
+  border-color: #2196F3;
+}
+
+.input-columna:focus {
+  box-shadow: 0 0 5px rgba(33, 150, 243, 0.5);
+}
+
+/* Estilos para input de oferta y demanda */
+.input-oferta {
+  background-color: rgba(76, 175, 80, 0.1);
+  border-color: #4CAF50;
+  font-weight: bold;
+}
+
+.input-demanda {
+  background-color: rgba(33, 150, 243, 0.1);
+  border-color: #2196F3;
+  font-weight: bold;
+}
+
+/* Estilos para celdas de oferta y demanda en resultados */
+.celda-oferta-resultado {
+  background-color: rgba(76, 175, 80, 0.1);
+  border-left: 3px solid #4CAF50;
+  font-weight: bold;
+}
+
+.celda-demanda-resultado {
+  background-color: rgba(33, 150, 243, 0.1);
+  border-top: 3px solid #2196F3;
+  font-weight: bold;
+}
+
+/* Estilos para oferta y demanda restantes en los pasos */
+.oferta-restante {
+  background-color: rgba(76, 175, 80, 0.1);
+  border-left: 3px solid #4CAF50;
+  font-weight: bold;
+}
+
+.demanda-restante {
+  background-color: rgba(33, 150, 243, 0.1);
+  border-top: 3px solid #2196F3;
+  font-weight: bold;
+}
+
+/* Estilos para texto coloreado en explicaciones */
+.texto-fila {
+  color: #4CAF50;
+  font-weight: bold;
+  padding: 2px 4px;
+  background-color: rgba(76, 175, 80, 0.1);
+  border-radius: 3px;
+}
+
+.texto-columna {
+  color: #2196F3;
+  font-weight: bold;
+  padding: 2px 4px;
+  background-color: rgba(33, 150, 243, 0.1);
+  border-radius: 3px;
+}
+
+/* Leyenda simplificada */
+.leyenda-simple {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin: 15px 0;
+}
+
+.leyenda-color-simple {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.color-origen, .color-destino {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+}
+
+/* Mejorar contraste de celdas asignadas */
+.celda-asignada {
+  background-color: #f5f5f5;
+  border: 2px solid #673AB7 !important;
+}
+
+.celda-asignacion-actual {
+  background-color: rgba(255, 193, 7, 0.3) !important;
+  border: 2px solid #FFC107 !important;
+}
+
+.celda-asignacion-previa {
+  background-color: rgba(103, 58, 183, 0.1) !important;
+  border: 2px solid #673AB7 !important;
+}
+
+/* Mejorar visibilidad de celdas agotadas */
+.oferta-agotada, .demanda-agotada {
+  background-color: #FFEBEE !important;
+  color: #D32F2F !important;
+  font-weight: bold;
+  border: 2px solid #F44336 !important;
+}
+
+.oferta-agotada-resultado, .demanda-agotada-resultado {
+  background-color: #FFEBEE !important;
+  color: #D32F2F !important;
+  font-weight: bold;
+  border: 2px solid #F44336 !important;
+}
+
+/* Estilos para la visualización de operaciones en celdas */
+.operacion-paso {
+  font-size: 11px;
+  color: #673AB7;
+  background-color: rgba(103, 58, 183, 0.1);
+  border-radius: 3px;
+  padding: 2px 4px;
+  margin-top: 3px;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.cambio-valor {
+  font-size: 11px;
+  color: #FF5722;
+  background-color: rgba(255, 87, 34, 0.1);
+  border-radius: 3px;
+  padding: 2px 4px;
+  margin-top: 3px;
+  display: block;
+}
+
+.explicacion-operacion, .explicacion-actualizacion {
+  font-size: 13px;
+  line-height: 1.5;
+  margin-top: 10px;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.explicacion-operacion {
+  background-color: rgba(156, 39, 176, 0.1);
+  border-left: 3px solid #9C27B0;
+}
+
+.explicacion-actualizacion {
+  background-color: rgba(255, 87, 34, 0.1);
+  border-left: 3px solid #FF5722;
+  margin-top: 5px;
+}
+
+/* Mejorar tamaño y visibilidad de las celdas para mostrar las operaciones */
+.celda-paso-contenido {
+  min-height: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+}
+
+.valor-paso {
+  font-weight: bold;
+  font-size: 18px;
+  color: #4CAF50;
+}
+
+.costo-paso {
+  font-size: 13px;
+  color: #757575;
+}
+
+/* Estilos para resaltar la última operación */
+.paso-solucion:last-child .celda-asignacion-actual {
+  animation: destacarUltimo 2s infinite alternate;
+  background-color: rgba(255, 193, 7, 0.4) !important;
+}
+
+@keyframes destacarUltimo {
+  from { box-shadow: 0 0 0 rgba(255, 193, 7, 0.5); }
+  to { box-shadow: 0 0 15px rgba(255, 193, 7, 1); }
+}
+
+/* Hacer los pasos más distinguibles entre sí */
+.paso-solucion {
+  border-left: 5px solid #673AB7;
+  transition: transform 0.2s ease;
+}
+
+.paso-solucion:hover {
+  transform: translateX(5px);
+}
+
+.paso-solucion:last-child {
+  border-left: 5px solid #FF9800;
+  background-color: #FFF8E1;
+}
+
+/* Estilos para el resumen final */
+.resumen-final {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #EDE7F6;
+  border-radius: 6px;
+  border: 1px solid #9C27B0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.resumen-final h5 {
+  color: #9C27B0;
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.resumen-final p {
+  margin: 5px 0;
+}
+
+.resumen-final strong {
+  color: #9C27B0;
+  font-size: 16px;
+}
+
+/* Estilos para resaltar el último paso */
+.ultimo-paso {
+  border-left: 5px solid #FF9800 !important;
+  background-color: #FFF8E1 !important;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.ultimo-paso .paso-header h4 {
+  color: #FF9800;
+}
+
+.ultimo-paso .paso-costo {
+  background-color: #FFF3E0;
+  color: #FF5722;
+}
+
+.ultimo-paso .paso-costo strong {
+  color: #E65100;
+  font-size: 18px;
+}
+
+/* Mejoras generales */
+.operacion-paso {
+  white-space: nowrap;
+}
+
+.tabla-paso {
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.tabla-paso td {
+  min-width: 60px;
+}
+
+/* Estilo para las ecuaciones pequeñas */
+.ecuacion-pequeña {
+  font-size: 10px;
+  color: #333;
+  margin-top: 3px;
+  padding: 2px 4px;
+  background-color: #f9f9f9;
+  border-radius: 3px;
+  border: 1px dashed #ccc;
+}

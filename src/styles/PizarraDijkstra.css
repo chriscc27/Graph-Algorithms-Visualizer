@@ -1,0 +1,607 @@
+.contenedor {
+    display:flex;
+    flex: 1; /* Ocupa todo el espacio disponible */
+    height: calc(100vh - 120px); /* Ajusta según altura de header/footer */
+    min-height: 500px; /* Altura mínima */
+}
+
+.panel-izquierdo {
+    background-color: #f4f4f4;
+    padding: 15px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    width: 250px;
+    position: relative;
+}
+
+.panel-derecho {
+    background-color: #f4f4f4;
+    padding: 15px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    width: 300px;
+    position: relative;
+}
+
+.resize-handle {
+    width: 5px;
+    height: 100%;
+    background-color: #ccc;
+    cursor: ew-resize;
+    position: absolute;
+    top: 0;
+}
+
+.panel-izquierdo .resize-handle {
+    right: 0;
+}
+
+.panel-derecho .resize-handle {
+    left: 0;
+}
+
+.botones-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.btn-calcular {
+    background-color: #3498db;
+    color: white;
+}
+
+.btn-calcular:hover {
+    background-color: #2980b9;
+}
+
+.btn-limpiar-resultados {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.btn-limpiar-resultados:hover {
+    background-color: #c0392b;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.pizarra {
+    flex-grow: 1;
+    background-color: #fff;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+
+.contenido-panel {
+    margin-top: 10px;
+}
+
+.custom-color-container {
+    margin-bottom: 10px;
+}
+
+.colores-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.color-option {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid #ddd;
+}
+
+.color-option:hover {
+    border-color: #000;
+}
+
+.custom-color-container input[type="color"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 35px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+}
+
+.button {
+    background-color: #4c4eaf;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: rgb(180, 24, 172);
+}
+
+.button.frutiger-button {
+    background: linear-gradient(145deg, #6fc3df, #4c8faf);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 12px 24px;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 8px 4px;
+    cursor: pointer;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.button.frutiger-button:hover {
+    background: linear-gradient(145deg, #4c8faf, #6fc3df);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.button.frutiger-button:active {
+    background: linear-gradient(145deg, #3a6d85, #5aa5c7);
+    transform: translateY(0);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.button.frutiger-button:disabled {
+    background: linear-gradient(145deg, #cccccc, #999999);
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.button.frutiger-button.clean-button {
+    background: linear-gradient(145deg, #ff6f61, #ff9f4d);
+}
+
+.button.frutiger-button.clean-button:hover {
+    background: linear-gradient(145deg, #ff9f4d, #ff6f61);
+}
+
+.button.frutiger-button.import-button {
+    background: linear-gradient(145deg, #6fdf6f, #4caf4c);
+}
+
+.button.frutiger-button.import-button:hover {
+    background: linear-gradient(145deg, #4caf4c, #6fdf6f);
+}
+
+.button.frutiger-button.export-button {
+    background: linear-gradient(145deg, #6fc3df, #4c8faf);
+}
+
+.button.frutiger-button.export-button:hover {
+    background: linear-gradient(145deg, #4c8faf, #6fc3df);
+}
+
+.button.frutiger-button.delete-button {
+    background: linear-gradient(145deg, #ff4d4d, #cc0000);
+}
+
+.button.frutiger-button.delete-button:hover {
+    background: linear-gradient(145deg, #cc0000, #ff4d4d);
+}
+
+.button.frutiger-button.edit-button {
+    background: linear-gradient(145deg, #ffcc00, #ff9900);
+}
+
+.button.frutiger-button.edit-button:hover {
+    background: linear-gradient(145deg, #ff9900, #ffcc00);
+}
+
+.button.frutiger-button.dijkstra-button {
+    background: linear-gradient(145deg, #9C27B0, #673AB7);
+}
+
+.button.frutiger-button.dijkstra-button:hover {
+    background: linear-gradient(145deg, #673AB7, #9C27B0);
+}
+
+.button.frutiger-button i {
+    margin-right: 8px;
+}
+
+.generate-button {
+    background: linear-gradient(145deg, #9c27b0, #673ab7) !important;
+    color: white !important;
+    border: none !important;
+    transition: background-color 0.3s ease !important;
+}
+
+.generate-button:hover {
+    background: linear-gradient(145deg, #673ab7, #9c27b0) !important;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+.inicio-fin-selector {
+    margin: 15px 0;
+    padding: 10px;
+    background: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.selector-title {
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.selector-dropdown {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    background: white;
+}
+
+.resultado-container {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.resultado-titulo {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.camino-container {
+    margin: 10px 0;
+    padding: 10px;
+    background: white;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+}
+
+.camino-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.camino-distancia {
+    font-weight: bold;
+    color: #2196F3;
+}
+
+.camino-ruta {
+    margin-top: 8px;
+    padding: 8px;
+    background: #f0f8ff;
+    border-radius: 4px;
+    font-family: monospace;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nodo-ruta {
+    display: inline-block;
+    margin: 0 4px;
+    padding: 3px 8px;
+    background: #e3f2fd;
+    border-radius: 12px;
+    color: #1565C0;
+}
+
+.flecha-ruta {
+    color: #9e9e9e;
+    margin: 0 2px;
+}
+
+/* Estilos para pasos de algoritmo */
+.pasos-algoritmo {
+    margin-top: 15px;
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+}
+
+.paso {
+    padding: 8px 12px;
+    border-bottom: 1px solid #e0e0e0;
+    transition: background-color 0.2s;
+}
+
+.paso:last-child {
+    border-bottom: none;
+}
+
+.paso.activo {
+    background-color: #e3f2fd;
+}
+
+.paso-numero {
+    font-weight: bold;
+    color: #1976D2;
+    margin-right: 5px;
+}
+
+.tabla-distancias {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.tabla-distancias th, .tabla-distancias td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.tabla-distancias th {
+    background-color: #f2f2f2;
+}
+
+.infinito {
+    color: #999;
+    font-style: italic;
+}
+
+.distancia-actual {
+    font-weight: bold;
+    color: #2196F3;
+}
+
+.nodo-visitado {
+    background-color: #e8f5e9;
+}
+
+.nodo-actual {
+    background-color: #ffebee;
+}
+
+.nodo-no-visitado {
+    background-color: #fff;
+}
+
+/* Animación para destacar el camino */
+@keyframes highlightPath {
+    0% { stroke-width: 2px; }
+    50% { stroke-width: 4px; }
+    100% { stroke-width: 2px; }
+}
+
+.path-highlight {
+    animation: highlightPath 1.5s infinite;
+    stroke: #673AB7;
+}
+
+/* Estilos para nodos especiales */
+.nodo-inicio {
+    fill: #4CAF50 !important;
+}
+
+.nodo-fin {
+    fill: #F44336 !important;
+}
+
+.nodo-camino {
+    fill: #9C27B0 !important;
+}
+
+/* Animación de pulso para los nodos del camino */
+@keyframes nodePulse {
+    0% { opacity: 0.7; }
+    50% { opacity: 1; }
+    100% { opacity: 0.7; }
+}
+
+.animate-node {
+    animation: nodePulse 1.5s infinite;
+}
+
+.proceso-container {
+    margin-top: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.iteracion {
+    margin-bottom: 10px;
+    padding: 8px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.iteracion-header {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.current-node {
+    color: #9C27B0;
+    font-weight: bold;
+}
+
+.updated-distance {
+    color: #2196F3;
+}
+
+.table-container {
+    overflow-x: auto;
+    margin: 15px 0;
+}
+
+.dijkstra-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    text-align: center;
+}
+
+.dijkstra-table th, .dijkstra-table td {
+    border: 1px solid #ddd;
+    padding: 6px;
+}
+
+.dijkstra-table th {
+    background-color: #f2f2f2;
+}
+
+.dijkstra-table .infinity {
+    color: #999;
+}
+
+.dijkstra-table .visited {
+    background-color: #e8f5e9;
+}
+
+.dijkstra-table .current {
+    background-color: #ede7f6;
+    font-weight: bold;
+}
+
+.resumen-container {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #e3f2fd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.resumen-titulo {
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.camino-optimo {
+    padding: 8px;
+    background-color: #fff;
+    border-radius: 4px;
+    margin-top: 5px;
+    font-size: 15px;
+}
+
+.distancia-total {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #1976D2;
+    font-size: 18px;
+}
+
+/* Botón de ayuda */
+.help-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.help-button:hover {
+  background: #1976D2;
+}
+
+/* Ventana de ayuda */
+.help-popup {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 500px;
+  max-height: 70vh;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  padding: 20px;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.help-popup h2 {
+  margin-top: 0;
+  color: #2196F3;
+  font-size: 1.5em;
+}
+
+.help-popup h3 {
+  color: #333;
+  font-size: 1.2em;
+  margin: 15px 0 10px;
+}
+
+.help-popup ul {
+  padding-left: 20px;
+  margin: 10px 0;
+}
+
+.help-popup li {
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.help-popup p {
+  margin: 10px 0;
+  line-height: 1.4;
+}
+
+.close-help {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.2em;
+  cursor: pointer;
+  color: #666;
+}

@@ -1,0 +1,277 @@
+.contenedor {
+  display: flex;
+  flex: 1; /* Ocupa todo el espacio disponible */
+  height: calc(100vh - 120px); /* Ajusta según altura de header/footer */
+  min-height: 500px; /* Altura mínima */
+}
+  
+  .panel-izquierdo, .panel-derecho {
+    background-color: #f4f4f4;
+    padding: 10px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    width: 250px; /* Ancho inicial del panel */
+  }
+  
+  .pizarra {
+    flex-grow: 1;
+    background-color: #fff;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+  }
+  
+  .contenido-panel {
+    margin-top: 10px;
+  }
+  
+  .custom-color-container {
+    margin-bottom: 10px;
+  }
+  
+  .colores-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  
+  .color-option {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid #ddd;
+  }
+  
+  .color-option:hover {
+    border-color: #000;
+  }
+  
+  .custom-color-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .custom-color-container input[type="color"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 35px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  .custom-color-container input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+  }
+  
+  .custom-color-container input[type="color"]::-webkit-color-swatch {
+    border: none;
+  }
+  
+  .resize-handle {
+    width: 5px;
+    height: 100%;
+    background-color: #ccc;
+    cursor: ew-resize;
+    position: absolute;
+    top: 0;
+  }
+  
+  .panel-izquierdo .resize-handle {
+    right: 0;
+  }
+  
+  .panel-derecho .resize-handle {
+    left: 0;
+  }
+  
+  .panel-izquierdo, .panel-derecho {
+    position: relative;
+  }
+  
+  .button {
+    background-color: #4c4eaf; /* Verde */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: rgb(180, 24, 172); /* Verde oscuro */
+  }
+  
+  .button:disabled {
+    background-color: #cccccc; /* Gris */
+    cursor: not-allowed;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-item-container {
+    padding: 8px 16px;
+  }
+  
+  .dropdown-item {
+    background-color: white;
+    border: none;
+    color: black;
+    padding: 8px 16px;
+    text-align: left;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    cursor: pointer;
+  }
+  .button.frutiger-button {
+    background: linear-gradient(145deg, #6fc3df, #4c8faf); /* Gradiente azul */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Borde sutil */
+    color: white;
+    padding: 12px 24px;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 8px 4px;
+    cursor: pointer;
+    border-radius: 12px; /* Bordes más redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: all 0.3s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente moderna */
+  }
+  
+  .button.frutiger-button:hover {
+    background: linear-gradient(145deg, #4c8faf, #6fc3df); /* Invertir gradiente al pasar el mouse */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+    transform: translateY(-2px); /* Efecto de elevación */
+  }
+  
+  .button.frutiger-button:active {
+    background: linear-gradient(145deg, #3a6d85, #5aa5c7); /* Gradiente más oscuro al hacer clic */
+    transform: translateY(0); /* Restablecer elevación */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra original */
+  }
+  
+  .button.frutiger-button:disabled {
+    background: linear-gradient(145deg, #cccccc, #999999); /* Gradiente gris */
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+  /* Estilo para el botón de limpiar */
+  .button.frutiger-button.clean-button {
+    background: linear-gradient(145deg, #ff6f61, #ff9f4d); /* Gradiente rojo/naranja */
+  }
+  
+  .button.frutiger-button.clean-button:hover {
+    background: linear-gradient(145deg, #ff9f4d, #ff6f61); /* Invertir gradiente */
+  }
+  
+  /* Estilo para el botón de importar */
+  .button.frutiger-button.import-button {
+    background: linear-gradient(145deg, #6fdf6f, #4caf4c); /* Gradiente verde */
+  }
+  
+  .button.frutiger-button.import-button:hover {
+    background: linear-gradient(145deg, #4caf4c, #6fdf6f); /* Invertir gradiente */
+  }
+  
+  /* Estilo para el botón de exportar */
+  .button.frutiger-button.export-button {
+    background: linear-gradient(145deg, #6fc3df, #4c8faf); /* Gradiente azul */
+  }
+  
+  .button.frutiger-button.export-button:hover {
+    background: linear-gradient(145deg, #4c8faf, #6fc3df); /* Invertir gradiente */
+  }
+  
+  /* Estilo para el botón de eliminar */
+  .button.frutiger-button.delete-button {
+    background: linear-gradient(145deg, #ff4d4d, #cc0000); /* Gradiente rojo oscuro */
+  }
+  
+  .button.frutiger-button.delete-button:hover {
+    background: linear-gradient(145deg, #cc0000, #ff4d4d); /* Invertir gradiente */
+  }
+  
+  /* Estilo para el botón de editar */
+  .button.frutiger-button.edit-button {
+    background: linear-gradient(145deg, #ffcc00, #ff9900); /* Gradiente amarillo/naranja */
+  }
+  
+  .button.frutiger-button.edit-button:hover {
+    background: linear-gradient(145deg, #ff9900, #ffcc00); /* Invertir gradiente */
+  }
+  
+  /* Estilos para los iconos */
+  .button.frutiger-button i {
+    margin-right: 8px;
+  }
+  /* Estilo adicional para el botón de editar */
+  .button.frutiger-button.edit-button {
+    background: linear-gradient(145deg, #ff9f4d, #ff6f61); /* Gradiente naranja */
+  }
+  
+  .button.frutiger-button.edit-button:hover {
+    background: linear-gradient(145deg, #ff6f61, #ff9f4d); /* Invertir gradiente */
+  }
+  
+  .dropdown-item:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .submenu {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  
+  .submenu-item {
+    background-color: white;
+    border: none;
+    color: black;
+    padding: 8px 16px;
+    text-align: left;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    cursor: pointer;
+  }
+  
+  .submenu-item:hover {
+    background-color: #f1f1f1;
+  }
+
+  .frutiger-button.cpm-button {
+    background-color: #9C27B0;
+    color: white;
+    margin: 5px 0;
+  }
+  
+  .frutiger-button.cpm-button:hover {
+    background-color: #7B1FA2;
+  }

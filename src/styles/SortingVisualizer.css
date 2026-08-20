@@ -1,0 +1,291 @@
+.contenedor {
+  display: flex;
+  flex: 1; /* Ocupa todo el espacio disponible */
+  height: calc(100vh - 120px) !important;/* Ajusta según altura de header/footer */
+  min-height: 500px; /* Altura mínima */
+}
+  
+  .panel-izquierdo {
+    background-color: #ffffff;
+    padding: 20px;
+    min-width: 250px !important;
+    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    position: relative;
+  }
+  
+  .array-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-start; /* Cambiado de center a flex-start */
+    align-items: flex-end;
+    padding: 20px;
+    background-color: #ffffff;
+    transition: width 0.3s ease;
+    overflow-x: auto; /* Habilitar scroll horizontal */
+    min-height: 300px; /* Altura mínima para mantener legibilidad */
+    flex-wrap: nowrap; /* Asegurar que las barras no se envuelvan */
+  }
+  
+  /* Botones principales */
+.button.frutigeri-button {
+  background: linear-gradient(145deg, var(--color1), var(--color2));
+  border: none;
+  color: white;
+  padding: 14px 28px;
+  width: 100%;
+  margin: 10px 0;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 12px;
+  box-shadow: 
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    0 2px 4px rgba(255, 255, 255, 0.2) inset;
+  transition: 
+    all 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Efecto hover */
+.button.frutigeri-button:hover:not(:disabled) {
+  transform: 
+    translateY(-2px)
+    rotate(1deg);
+  box-shadow: 
+    0 6px 12px rgba(0, 0, 0, 0.15),
+    0 3px 6px rgba(255, 255, 255, 0.3) inset;
+  filter: brightness(1.1);
+}
+
+/* Efecto activo */
+.button.frutigeri-button:active:not(:disabled) {
+  transform: translateY(1px);
+  filter: brightness(0.9);
+}
+
+/* Estado deshabilitado */
+.button.frutigeri-button:disabled {
+  opacity: 0.6;
+  filter: grayscale(0.4);
+  box-shadow: none;
+}
+
+/* Efecto de brillo al hover */
+.button.frutigeri-button::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transform: translateX(-100%);
+  transition: all 0.6s ease;
+}
+
+.button.frutigeri-button:hover::after {
+  transform: translateX(100%);
+}
+
+/* Colores específicos para cada botón */
+.generate-button {
+  --color1: #2ecc71;
+  --color2: #27ae60;
+  background: linear-gradient(145deg, var(--color1), var(--color2));
+}
+
+.shuffle-button {
+  --color1: #e67e22;
+  --color2: #d35400;
+  background: linear-gradient(145deg, var(--color1), var(--color2));
+}
+
+.shell-button {
+  --color1: #e74c3c;
+  --color2: #c0392b;
+  background: linear-gradient(145deg, var(--color1), var(--color2));
+}
+
+.merge-button {
+  --color1: #9b59b6;
+  --color2: #8e44ad;
+  background: linear-gradient(145deg, var(--color1), var(--color2));
+}
+
+.insertion-button {
+  --color1: #3498db;
+  --color2: #2980b9;
+  background: linear-gradient(145deg, var(--color1), var(--color2));
+}
+
+.selection-button {
+  --color1: #f1c40f;
+  --color2: #f39c12;
+  background: linear-gradient(145deg, var(--color1), var(--color2));
+}
+
+/* Iconos (necesitarías incluir una librería de iconos) */
+.button.frutigeri-button::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 18px;
+}
+  
+  .generate-button {
+    background: linear-gradient(145deg, #4caf50, #45a049);
+  }
+  
+  .bubble-button {
+    background: linear-gradient(145deg, #ff6f61, #ff9f4d);
+  }
+  
+  .quick-button {
+    background: linear-gradient(145deg, #9c27b0, #673ab7);
+  }
+  
+  .resize-handle {
+    width: 5px;
+    height: 100%;
+    background-color: #ccc;
+    cursor: ew-resize;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  
+  .array-bar {
+    min-width: 8px; /* Ancho mínimo para cada barra */
+    margin: 0 1px;
+    transition: 
+      height 0.3s ease,
+      background-color 0.2s ease;
+    border-radius: 4px 4px 0 0;
+    background-color: #4a90e2;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    flex-shrink: 0; /* Evitar que las barras se encojan */
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .array-bar {
+    background-color: #4a90e2;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    position: relative; /* Para posicionar el número */
+  }
+  
+  @media screen and (max-width: 1500px) {
+    .array-bar {
+      margin: 0 0.5px; /* Reducir margen cuando hay muchas barras */
+    }
+  }
+  
+  .bar-value {
+    color: white;
+    font-size: 12px; /* Tamaño de fuente reducido */
+    font-weight: bold;
+    position: absolute;
+    bottom: 2px;
+    transform: rotate(-45deg); /* Mejorar legibilidad en barras estrechas */
+    white-space: nowrap;
+    pointer-events: none; /* Evitar interferencia con hover */
+  }
+  
+  /* Ocultar valores en arrays muy grandes */
+  @media screen and (max-width: 768px) {
+    .bar-value {
+      display: none;
+    }
+  }
+  
+  .shell-button {
+    background: linear-gradient(145deg, #ff6f61, #ff9f4d);
+  }
+  
+  .shell-button:hover {
+    background: linear-gradient(145deg, #ff9f4d, #ff6f61);
+  }
+
+.array-bar {
+  transition: background-color 0.3s ease, height 0.3s ease;
+  position: relative;
+  overflow: visible;
+}
+
+.array-bar::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+.array-bar.sorted::after {
+  background-color: #00ff00;
+}  
+
+/* Estilos para el cronómetro */
+.timer-container {
+  position: absolute; /* o fixed, dependiendo de tu layout */
+  top: 10px; /* Ajusta la posición según sea necesario */
+  left: 40px; /* Ajusta la posición según sea necesario */
+  pointer-events: none; /* Permite que los clics pasen a través del cronómetro */
+}
+
+
+.timer {
+  pointer-events: auto;
+  display: flex;
+  position: relative;
+  align-items: center;
+  gap: 10px;
+  background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+  padding: 15px 25px;
+  border-radius: 30px;
+  box-shadow: 
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    0 2px 4px rgba(255, 255, 255, 0.2) inset;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  margin-top: 730px;
+  width: 200px;  /* Puedes ajustar el ancho según lo necesites */
+}
+
+
+.timer-icon {
+  font-size: 24px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.timer-text {
+  font-size: 28px;
+  font-weight: 600;
+  font-family: 'Courier New', monospace;
+  color: #2c3e50;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}

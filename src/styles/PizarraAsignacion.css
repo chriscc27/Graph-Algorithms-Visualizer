@@ -1,0 +1,387 @@
+.contenedor {
+    display:flex;
+    flex: 1; /* Ocupa todo el espacio disponible */
+    height: calc(100vh - 120px); /* Ajusta según altura de header/footer */
+    min-height: 500px; /* Altura mínima */
+}
+
+.panel-izquierdo {
+    background-color: #f4f4f4;
+    padding: 15px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    width: 250px;
+    position: relative;
+}
+
+.panel-derecho {
+    background-color: #f4f4f4;
+    padding: 15px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    width: 300px;
+    position: relative;
+}
+
+.resize-handle {
+    width: 5px;
+    height: 100%;
+    background-color: #ccc;
+    cursor: ew-resize;
+    position: absolute;
+    top: 0;
+}
+
+.panel-izquierdo .resize-handle {
+    right: 0;
+}
+
+.panel-derecho .resize-handle {
+    left: 0;
+}
+
+.botones-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.btn-minimo {
+    background-color: #3498db;
+    color: white;
+}
+
+.btn-minimo:hover {
+    background-color: #2980b9;
+}
+
+.btn-maximo {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.btn-maximo:hover {
+    background-color: #c0392b;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+
+
+
+.pizarra {
+    flex-grow: 1;
+    background-color: #fff;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+
+.contenido-panel {
+    margin-top: 10px;
+}
+
+.custom-color-container {
+    margin-bottom: 10px;
+}
+
+.colores-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.color-option {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid #ddd;
+}
+
+.color-option:hover {
+    border-color: #000;
+}
+
+.custom-color-container input[type="color"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 35px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+}
+
+.custom-color-container input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+.custom-color-container input[type="color"]::-webkit-color-swatch {
+    border: none;
+}
+
+.button {
+    background-color: #4c4eaf;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: rgb(180, 24, 172);
+}
+
+.button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.hidden {
+    display: none;
+}
+
+.dropdown-menu {
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-item-container {
+    padding: 8px 16px;
+}
+
+.dropdown-item {
+    background-color: white;
+    border: none;
+    color: black;
+    padding: 8px 16px;
+    text-align: left;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    cursor: pointer;
+}
+
+.button.frutiger-button {
+    background: linear-gradient(145deg, #6fc3df, #4c8faf);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 12px 24px;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 8px 4px;
+    cursor: pointer;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.button.frutiger-button:hover {
+    background: linear-gradient(145deg, #4c8faf, #6fc3df);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.button.frutiger-button:active {
+    background: linear-gradient(145deg, #3a6d85, #5aa5c7);
+    transform: translateY(0);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.button.frutiger-button:disabled {
+    background: linear-gradient(145deg, #cccccc, #999999);
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.button.frutiger-button.clean-button {
+    background: linear-gradient(145deg, #ff6f61, #ff9f4d);
+}
+
+.button.frutiger-button.clean-button:hover {
+    background: linear-gradient(145deg, #ff9f4d, #ff6f61);
+}
+
+.button.frutiger-button.import-button {
+    background: linear-gradient(145deg, #6fdf6f, #4caf4c);
+}
+
+.button.frutiger-button.import-button:hover {
+    background: linear-gradient(145deg, #4caf4c, #6fdf6f);
+}
+
+.button.frutiger-button.export-button {
+    background: linear-gradient(145deg, #6fc3df, #4c8faf);
+}
+
+.button.frutiger-button.export-button:hover {
+    background: linear-gradient(145deg, #4c8faf, #6fc3df);
+}
+
+.button.frutiger-button.delete-button {
+    background: linear-gradient(145deg, #ff4d4d, #cc0000);
+}
+
+.button.frutiger-button.delete-button:hover {
+    background: linear-gradient(145deg, #cc0000, #ff4d4d);
+}
+
+.button.frutiger-button.edit-button {
+    background: linear-gradient(145deg, #ffcc00, #ff9900);
+}
+
+.button.frutiger-button.edit-button:hover {
+    background: linear-gradient(145deg, #ff9900, #ffcc00);
+}
+
+.button.frutiger-button i {
+    margin-right: 8px;
+}
+
+.button.frutiger-button.edit-button {
+    background: linear-gradient(145deg, #ff9f4d, #ff6f61);
+}
+
+.button.frutiger-button.edit-button:hover {
+    background: linear-gradient(145deg, #ff6f61, #ff9f4d);
+}
+
+.dropdown-item:hover {
+    background-color: #f1f1f1;
+}
+
+.submenu {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.submenu-item {
+    background-color: white;
+    border: none;
+    color: black;
+    padding: 8px 16px;
+    text-align: left;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    cursor: pointer;
+}
+
+.submenu-item:hover {
+    background-color: #f1f1f1;
+}
+
+.go-Shape.arrow {
+    stroke-width: 3px;
+  }
+  
+  /* Resaltar enlaces óptimos */
+  .go-Link.highlighted {
+    animation: pulse 1.5s infinite;
+  }
+  
+  @keyframes pulse {
+    0% { stroke-width: 3px; }
+    50% { stroke-width: 5px; }
+    100% { stroke-width: 3px; }
+  }
+
+  /* Agregar en tu archivo de estilos pizarraAsignacion.css */
+
+/* Estilos para la sección de costo */
+.costo {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    border-radius: 8px;
+    background: #f8f9fa;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+  
+  .costo h3 {
+    margin: 0;
+    font-size: 1.4rem;
+    color: #2c3e50;
+    font-weight: 600;
+  }
+  
+  /* Línea de color dinámica */
+  .linea-color {
+    height: 4px;
+    width: 100%;
+    margin: 1rem 0;
+    border-radius: 2px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .linea-color.minimo {
+    background-color: #FF4081; /* Color para minimización */
+  }
+  
+  .linea-color.maximo {
+    background-color: #4CAF50; /* Color para maximización */
+  }
+  
+  /* Contenedor de conexiones */
+  .conexiones-container {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+  }
+  
+  .conexiones-titulo {
+    font-size: 1.5rem;
+    color: #34495e;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+
+  }
+  
+  .conexiones-lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .conexion-item {
+    background: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    font-size: 1.3rem;
+    color: #2c3e50;
+    border: 1px solid #eee;
+  }

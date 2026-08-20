@@ -1,0 +1,428 @@
+/* Estilos Base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    line-height: 1.6;
+    color: #2d3748; /* Texto más oscuro */
+    background-color: #f7f9fc; /* Fondo más claro */
+}
+
+/* Layout Principal */
+.contenedor-principal {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    min-height: 100vh;
+    padding: 2rem;
+    gap: 2rem;
+    max-width: 1600px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #e3f2fd, #f1f8e9); /* Fondo degradado */
+}
+
+/* Cabecera */
+.cabecera {
+    text-align: center;
+    padding: 1rem;
+    background: #4a90e2; /* Azul vibrante */
+    color: white;
+    border-bottom: 3px solid #2c3e50;
+}
+
+.titulo-principal {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    margin-bottom: 0.5rem;
+}
+
+/* Sección Principal */
+.contenido-principal {
+    display: grid;
+    grid-template-columns: 250px 1fr 250px;
+    gap: 2rem;
+    align-items: start;
+}
+
+/* Controles Laterales */
+.grupo-controles {
+    position: sticky;
+    top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.subtitulo {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #4a5568;
+    font-weight: 600;
+}
+
+/* Controles de Dimensiones */
+.controles-dimensiones {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.control-dimension {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.control-dimension label {
+    font-weight: 500;
+    color: #4a5568;
+}
+
+.ajustador {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-dimension {
+    padding: 0.4rem 0.8rem;
+    border: 1px solid #cbd5e0;
+    background: #f7fafc;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-dimension:hover {
+    background: #edf2f7;
+}
+
+.numero {
+    font-weight: 600;
+    min-width: 2rem;
+    text-align: center;
+}
+
+/* Botones Principales */
+.grupo-botones {
+    display: flex;
+    flex-direction: column; /* Cambiado de column a row */
+    gap: 0.75rem; /* Mantén o ajusta el espacio entre los botones */
+}
+
+.grupo-botones-acciones {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 0.75rem;
+}
+
+.grupo-botones-acciones > * {
+    flex: 1; /* Cada hijo ocupa el 50% del espacio disponible */
+}
+
+.btn {
+    padding: 0.75rem 1.25rem;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+.btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Colores de botones */
+.btn-Borrar {
+    background: #e53e3e; /* Rojo */
+}
+
+.btn-Borrar:hover {
+    background: #c53030;
+}
+
+.btn-exportar {
+    background: #48bb78; /* Verde */
+}
+
+.btn-exportar:hover {
+    background: #38a169;
+}
+.btn-success {
+    background: #38a169; /* Verde */
+}
+
+.btn-importar {
+    background: #4299e1; /* Azul */
+}
+
+.btn-importar:hover {
+    background: #3182ce;
+}
+
+.btn-maximizar {
+    background: #38b2ac; /* Turquesa */
+}
+
+.btn-maximizar:hover {
+    background: #2c7a7b;
+}
+
+.btn-minimizar {
+    background: #f6ad55; /* Naranja */
+}
+
+.btn-minimizar:hover {
+    background: #dd6b20;
+}
+
+.btn-limpiar {
+    background: #f56565; /* Rojo claro */
+}
+.btn-random {
+    background: #d0b103;
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 0.75rem 1.25rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+/* Tabla de Transporte */
+.seccion-tabla {
+    grid-column: 2;
+}
+
+.tabla-container {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+}
+
+.subtitulo-tabla {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #2c3e50;
+    padding: 1rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.tabla-transporte {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    min-width: 800px;
+}
+
+.tabla-transporte th {
+    background-color: #4a90e2; /* Azul vibrante */
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0.75rem;
+    border: 1px solid #dee2e6;
+}
+
+.tabla-transporte td {
+    padding: 0.5rem;
+    border: 1px solid #dee2e6;
+    background: #ffffff;
+    transition: background-color 0.2s ease;
+}
+
+.tabla-transporte td:hover {
+    background: #f0f4f8; /* Fondo claro al pasar el mouse */
+}
+
+/* Celdas de Entrada */
+.input-cell {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #cbd5e0;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 0.95rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-cell:focus {
+    outline: none;
+    border-color: #63b3ed; /* Azul claro */
+    box-shadow: 0 0 0 3px rgba(99, 179, 237, 0.3);
+}
+
+.input-oferta {
+    background-color: #f0fff4; /* Verde claro */
+}
+
+.input-demanda {
+    background-color: #ebf8ff; /* Azul claro */
+}
+
+/* Balance Oferta/Demanda */
+.balanceo {
+    padding: 1rem;
+    margin-top: 1rem;
+    background: #edf2f7; /* Fondo gris claro */
+    border: 1px solid #cbd5e0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-weight: bold;
+    color: #2d3748;
+}
+
+.icono-alerta {
+    color: #e53e3e; /* Rojo */
+    font-size: 1.2rem;
+}
+
+/* Sección de Resultados */
+.seccion-resultados {
+    grid-column: 1 / -1;
+}
+
+.resultados-carrusel {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.iteracion-resultado {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.iteracion-resultado:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.iteration-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.optimal-badge {
+    background: #c6f6d5; /* Verde claro */
+    color: #22543d; /* Verde oscuro */
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+
+.error-badge {
+    background: #fed7d7; /* Rojo claro */
+    color: #742a2a; /* Rojo oscuro */
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .contenido-principal {
+        grid-template-columns: 1fr;
+    }
+
+    .grupo-controles {
+        position: static;
+    }
+
+    .tabla-container {
+        grid-column: 1;
+        min-width: auto;
+    }
+
+    .seccion-controles {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .contenedor-principal {
+        padding: 1rem;
+    }
+
+    .tabla-transporte th,
+    .tabla-transporte td {
+        padding: 0.5rem 0.3rem;
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .seccion-controles {
+        grid-template-columns: 1fr;
+    }
+
+    .resultados-carrusel {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .titulo-principal {
+        font-size: 1.8rem;
+    }
+
+    .input-cell {
+        padding: 0.3rem;
+        font-size: 0.85rem;
+    }
+
+    .ajustador {
+        gap: 0.3rem;
+    }
+
+    .btn-dimension {
+        padding: 0.3rem 0.6rem;
+    }
+}

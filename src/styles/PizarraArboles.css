@@ -1,0 +1,166 @@
+.pizarra-container {
+    display: flex;
+    height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+  }
+  
+  .pizarra-sidebar {
+    width: 280px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: auto;
+  }
+  
+  .array-display {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  .array-display h3 {
+    margin-top: 0;
+    color: #333;
+    font-size: 16px;
+  }
+  
+  .array-values {
+    font-size: 18px;
+    font-weight: bold;
+    word-break: break-word;
+    padding: 10px 0;
+    color: #2c3e50;
+  }
+  
+  .pizarra-diagram {
+    flex: 1;
+    background-color: white;
+    border: 1px solid #ddd;
+    min-height: 500px;
+    overflow: hidden;
+  }
+  
+  .tree-svg {
+    background-color: white;
+  }
+  
+  .pizarra-footer {
+    position: fixed;
+    bottom: 0;
+    left: 280px;
+    right: 0;
+    padding: 15px 25px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+  }
+  
+  .traversal-result {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    flex: 1;
+  }
+  
+  .resultado-text {
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 10px;
+    color: #2c3e50;
+  }
+  
+  .legend {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+  }
+  
+  .legend-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #333;
+  }
+  
+  .button-group, .traversal-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .pizarra-btn {
+    padding: 12px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.2s;
+    color: white;
+    font-size: 15px;
+  }
+  
+  .pizarra-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  }
+  
+  .pizarra-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+  
+  .generate {
+    background-color: #4CAF50;
+  }
+  .pizarra-btn-export{
+    background-color: #2196F3 !important;
+    color: aliceblue;
+  }
+  .pizarra-btn-import{
+    background-color: #15a741 !important;
+    color: aliceblue;
+  }
+  
+  .manual {
+    background-color: #9C27B0;
+  }
+  
+  .draw {
+    background-color: #2196F3;
+  }
+  
+  .clear {
+    background-color: #f44336;
+  }
+  
+  
+  
+  .node-text {
+    font-size: 16px;
+  }
+  
+  .link {
+    stroke: #999;
+    stroke-width: 2px;
+  }
